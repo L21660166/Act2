@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2</title>
+    <style>
+        /* El cuerpo de la página tiene una transición de color de fondo
+           suave, con una duración de 0.5 segundos */
+        body {
+            transition: background-color 0.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilo del botón */
+        button {
+            background-color: #f6f2f7; /* Color de fondo del botón */
+            color: black; /* Color del texto del botón */
+            padding: 15px 32px; /* Espaciado dentro del botón */
+            font-size: 16px; /* Tamaño de la fuente del texto */
+            border-color: black; /* Color del borde del botón */
+            border-radius: 8px; /* Bordes redondeados */
+            cursor: pointer; /* Cambia el cursor cuando se pasa sobre el botón */
+            transition: background-color 0.3s; /* Transición suave cuando se cambia el color de fondo */
+        }
+
+        /* Cambio de color al pasar el ratón por encima */
+        button:hover {
+            background-color: #636363; /* Color más oscuro cuando se pasa el ratón */
+        }
+    </style>
+</head>
+<body>
+    <!-- Botón que ejecuta la función para cambiar el color de fondo -->
+    <button onclick="cambiarColor()">Cambiar Color</button>
+    
+    <script>
+        // Función que genera un color aleatorio en formato hexadecimal
+        function generarColorAleatorio() {
+            const letras = '0123456789ABCDEF'; // caracteres hexadecimales
+            let color = '#'; // los colores hex empiezan con #
+            // Generamos los 6 caracteres para el color
+            for (let i = 0; i < 6; i++) {
+                color += letras[Math.floor(Math.random() * 16)];
+            }
+            return color; // devolvemos el color generado
+        }
+
+        // Función que cambia el color de fondo del body
+        function cambiarColor() {
+            // Se usa la función generarColorAleatorio para obtener un nuevo color
+            document.body.style.backgroundColor = generarColorAleatorio();
+        }
+    </script>
+</body>
+</html>
